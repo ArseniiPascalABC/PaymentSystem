@@ -2,7 +2,6 @@ package com.test.paymentsystem.controllers;
 
 import com.test.paymentsystem.models.Booking;
 import com.test.paymentsystem.services.BookingService;
-import com.test.paymentsystem.services.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -21,7 +20,6 @@ import java.util.List;
 public class BookingController {
 
     private final BookingService bookingService;
-    private final PaymentService paymentService;
 
 
     @GetMapping("/all")
