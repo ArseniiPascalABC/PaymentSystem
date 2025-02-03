@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_USERNAME: username
+      MONGO_PASSWORD: password
+      MONGO_DATABASE: mydatabase
+    ports:
+      - "27017:27017"
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - paymentsystem-network
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  paymentsystem-network:
+    driver: bridge
